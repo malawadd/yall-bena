@@ -1,4 +1,6 @@
 import mockFetch from "./mock";
+import { FormData } from "../../pages/expense/create";
+import { PayFormData } from "../../components/pay";
 
 
 const EXPENSE_DELAY = 3000; //in ms
@@ -64,6 +66,13 @@ class ExpenseService {
 
   async loadExpense(id: number): Promise<ExpenseModel> {
     return mockFetch<ExpenseModel>(EXPENSE_DELAY, expenses[id]);
+  }
+  async createExpense(data: FormData): Promise<number> {
+    return mockFetch<number>(EXPENSE_DELAY, 1);
+  }
+
+  async payExpense(data: PayFormData): Promise<number> {
+    return mockFetch<number>(EXPENSE_DELAY, 1);
   }
 
 
