@@ -26,13 +26,13 @@ type Props = {
 
 const Pay = ({ toggleViewPayForm }: Props) => {
   const [PayformData, setPayFormData] = useState<PayFormData>({
-    token: "eth",
+    token: "CETT",
     shareAmount: 0,
     recipientToken: "usdt",
     receipientAmount: 0,
-    networkFee: "0.00000001 ETH",
-    swapFee: "0.000001 ETH",
-    totalFee: "1.00000101 ETH",
+    networkFee: "0.00000001 CETT",
+    swapFee: "0.000001 CETT",
+    totalFee: "1.00000101 CETT",
   });
 
   const onChange = ({
@@ -78,7 +78,7 @@ const Pay = ({ toggleViewPayForm }: Props) => {
             <Select
               name="token"
               placeholder="Choose..."
-              options={["usdt", "eth"]}
+              options={["usdt", "CETT"]}
               value={PayformData.token}
               onChange={onChange}
             />
@@ -103,7 +103,7 @@ const Pay = ({ toggleViewPayForm }: Props) => {
             <Select
               name="recipientToken"
               placeholder="Choose..."
-              options={["usdt", "eth"]}
+              options={["usdt", "CETT"]}
               value={PayformData.recipientToken}
               onChange={onChange}
             />
@@ -125,7 +125,7 @@ const Pay = ({ toggleViewPayForm }: Props) => {
 
       <span className="mt-2 text-muted text-2xs flex items-center">
         <Image src={infoIcon} width={10} height={10} />
-        <p className="ml-1">1 USDT = 0.001 ETH</p>
+        <p className="ml-1">1 USDT = 25 CETT</p>
       </span>
 
       <div className="border-b-2 pb-3 border-tertiary mt-5 grid grid-cols-2 w-full gap-x-3 text-secondary text-sm">
@@ -135,7 +135,7 @@ const Pay = ({ toggleViewPayForm }: Props) => {
         </p>
         <p>Network fee: </p>
         <p className="text-right">{PayformData.networkFee}</p>
-        <p>Swap fee: </p>
+        {/* <p>Swap fee: </p>
         <p className="text-right">{PayformData.swapFee}</p>
         <span className="col-span-2 mt-2 flex justify-end text-muted text-xs flex items-center">
           <Image src={infoIcon} width={10} height={10} />
@@ -144,7 +144,7 @@ const Pay = ({ toggleViewPayForm }: Props) => {
             order to swap {PayformData.token} to {PayformData.recipientToken} a
             small fee has to be provided.
           </p>
-        </span>
+        </span> */}
       </div>
 
       <div className="mt-4 grid grid-cols-2 w-full gap-3 text-primary text-sm">
